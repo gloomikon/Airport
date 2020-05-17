@@ -125,4 +125,4 @@ Returns a list of all flights of given user. Response should look like array of 
 Creates a review  
 
 **DELETE**  locahlost:8080/reviews?**id**=1  
-Deleted a review with following id
+Deletes a review with following id
