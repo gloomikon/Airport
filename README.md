@@ -18,7 +18,8 @@
 **id** - int  
 **company_id** - int (FK for Company)  
 **text** - string  
-**rating** - double
+**rating** - double  
+**user_id** - int (FK for User)
 
 ### Plane
 **id** - int  
@@ -117,3 +118,11 @@ Returns a list of all flights of given user. Response should look like array of 
      "user_id": ...  
    }  
  }  
+
+### Review client
+
+**POST** locahlost:8080/reviews?**company_id**=1&**text**=Bad service!&**rating**=2.0  
+Creates a review  
+
+**DELETE**  locahlost:8080/reviews?**id**=1  
+Deleted a review with following id
