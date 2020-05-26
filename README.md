@@ -72,6 +72,9 @@ Updates a company. Return true if everything was OK. false if error occured
 **DELETE** localhost:8080/companies?**id**=1  
 Deletes a company. Return true if everything was OK. false if error occured
 
+**GET** localhost:8080/planes&**company_id**=1  
+Returns list of planes for given company
+
 **POST** localhost:8080/planes?**name**=Boing&**company_id**=1&**capacity**=50  
 Creates a plane. Return true if everything was OK. false if error occured
 
@@ -87,10 +90,19 @@ Returns a list of all flights
 **POST** localhost:8080/flights?**date_from**=13/01/20&**date_to**=14/01/20&**name_from**=Borispol&**name_to**=GHE&**plane_id**=3  
 Creates a flight
 
+**DELETE** localhost:8080/flights&**id**=1  
+Deletes a flight
+
 ### Review client
 
-**POST** locahlost:8080/reviews?**company_id**=1&**text**=Bad service!&**rating**=2.0  
-Creates a review  
+**GET** locahlost:8080/reviews?**company_id**=1  
+Returns list of reviews for given company
+
+**POST** locahlost:8080/reviews?**company_id**=1&**text**=Bad service!&**rating**=2&**user_id**=1  
+Creates a review 
+
+**PUT** locahlost:8080/reviews?**id**=1&**text**=Nice!&**rating**=4  
+Updates a review 
 
 **DELETE**  locahlost:8080/reviews?**id**=1  
 Deletes a review with following id
