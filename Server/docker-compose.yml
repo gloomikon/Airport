@@ -27,6 +27,16 @@ services:
      - eureka-service
      - mysql
 
+ airship-service:
+   build:
+     context: airship-service
+     dockerfile: Dockerfile
+   ports:
+     - '8083:8083'
+   depends_on:
+     - eureka-service
+     - mysql
+
  mysql:
    image: mysql:5.7
    restart: always
