@@ -3,7 +3,6 @@ package app.User;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "users")
@@ -11,23 +10,21 @@ import java.time.LocalDateTime;
 public class User {
     @Id @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
-    private String username;
+    private String login;
     private String password;
     private String name;
     private String surname;
-    private String email;
-    private String phone;
+    private String passport;
 
     public User() {
     }
 
-    public User(String username, String password, String name, String surname, String email, String phone) {
-        this.username = username;
+    public User(String login, String password, String name, String surname, String passport) {
+        this.login = login;
         this.password = password;
         this.name = name;
         this.surname = surname;
-        this.email = email;
-        this.phone = phone;
+        this.passport = passport;
     }
 
 
@@ -39,12 +36,12 @@ public class User {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getLogin() {
+        return login;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
     public String getPassword() {
@@ -71,19 +68,12 @@ public class User {
         this.surname = surname;
     }
 
-    public String getEmail() {
-        return email;
+    public String getPassport() {
+        return passport;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setPassport(String passport) {
+        this.passport = passport;
     }
 
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
 }
