@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="O9E-AY-cNO">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Companies List-->
+        <scene sceneID="7Qz-RY-O1c">
+            <objects>
+                <viewController storyboardIdentifier="CompaniesViewController" title="Companies List" useStoryboardIdentifierAsRestorationIdentifier="YES" id="O9E-AY-cNO" customClass="CompaniesViewController" customModule="AirportAdmin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J1T-CG-a61">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RWI-fr-DEO">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="RWI-fr-DEO" firstAttribute="top" secondItem="SH4-TH-Y9i" secondAttribute="top" id="37X-nt-VEi"/>
+                            <constraint firstItem="SH4-TH-Y9i" firstAttribute="trailing" secondItem="RWI-fr-DEO" secondAttribute="trailing" id="WEX-OL-3Ci"/>
+                            <constraint firstItem="SH4-TH-Y9i" firstAttribute="bottom" secondItem="RWI-fr-DEO" secondAttribute="bottom" id="YFv-qN-8K6"/>
+                            <constraint firstItem="RWI-fr-DEO" firstAttribute="leading" secondItem="SH4-TH-Y9i" secondAttribute="leading" id="mQR-3Z-5Tf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SH4-TH-Y9i"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Companies List" id="yj6-ZJ-8Wa">
+                        <barButtonItem key="leftBarButtonItem" title="View Flights" id="vVk-VF-zDB">
+                            <connections>
+                                <action selector="viewFlightsButtonTapped:" destination="O9E-AY-cNO" id="ueK-GX-jnc"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="New" id="8ia-kI-cDg">
+                            <connections>
+                                <action selector="addNewCompanyButtonTapped:" destination="O9E-AY-cNO" id="TME-cg-5sC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="RWI-fr-DEO" id="oUm-45-gpi"/>
+                        <segue destination="kCW-L6-ah2" kind="show" identifier="addNewComapany" id="Avx-zi-zf0"/>
+                        <segue destination="kCW-L6-ah2" kind="show" identifier="updateCompany" id="5Mn-C5-e6M"/>
+                        <segue destination="YGF-Ye-K6k" kind="show" identifier="showFlights" id="Bdg-V7-OoI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rZC-eU-BI8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-143" y="179"/>
+        </scene>
+        <!--FlightsListViewController-->
+        <scene sceneID="B3H-ha-6uP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="FlightsList" referencedIdentifier="FlightsListViewController" id="YGF-Ye-K6k" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="tgq-2J-A9o"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dc3-l0-7ae" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="623" y="12"/>
+        </scene>
+        <!--NewCompanyViewController-->
+        <scene sceneID="TQn-dY-5T9">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NewCompany" referencedIdentifier="NewCompanyViewController" id="kCW-L6-ah2" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="b5A-9s-x8B"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yrE-2l-eOR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="484" y="154"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="5Mn-C5-e6M"/>
+    </inferredMetricsTieBreakers>
+</document>

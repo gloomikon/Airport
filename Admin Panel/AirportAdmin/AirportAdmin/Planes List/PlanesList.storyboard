@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JhE-Yr-37n">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Planes List-->
+        <scene sceneID="FEZ-1T-agb">
+            <objects>
+                <viewController storyboardIdentifier="PlanesListViewController" title="Planes List" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JhE-Yr-37n" customClass="PlanesListViewController" customModule="AirportAdmin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P22-uo-bTq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ayi-r4-aPn">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="W2M-NU-zrU" firstAttribute="bottom" secondItem="ayi-r4-aPn" secondAttribute="bottom" id="GtY-qY-8Yc"/>
+                            <constraint firstItem="ayi-r4-aPn" firstAttribute="leading" secondItem="W2M-NU-zrU" secondAttribute="leading" id="PWy-Ck-0aa"/>
+                            <constraint firstItem="W2M-NU-zrU" firstAttribute="trailing" secondItem="ayi-r4-aPn" secondAttribute="trailing" id="eb0-tH-nUp"/>
+                            <constraint firstItem="ayi-r4-aPn" firstAttribute="top" secondItem="W2M-NU-zrU" secondAttribute="top" id="uKT-uB-s5N"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="W2M-NU-zrU"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="ayi-r4-aPn" id="nk9-JS-YNd"/>
+                        <segue destination="NLR-eZ-CmZ" kind="show" identifier="addNewPlane" id="ep4-MU-hvz"/>
+                        <segue destination="NLR-eZ-CmZ" kind="show" identifier="updatePlane" id="HrY-qs-5wj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WYX-f4-V2l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="410" y="-196"/>
+        </scene>
+        <!--NewPlaneViewController-->
+        <scene sceneID="X3r-Ur-vvs">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NewPlane" referencedIdentifier="NewPlaneViewController" id="NLR-eZ-CmZ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Hha-EI-0Wd"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PWl-Fr-Fcm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1130" y="-296"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ep4-MU-hvz"/>
+    </inferredMetricsTieBreakers>
+</document>
