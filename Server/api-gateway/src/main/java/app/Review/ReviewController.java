@@ -8,7 +8,7 @@ public class ReviewController {
     ReviewClient reviewClient;
 
     @GetMapping("/reviews")
-    String getReviews(@RequestParam(value = "companyId", required = false) String companyId) {
+    String getReviews(@RequestParam(value = "companyId", required = false) Integer companyId) {
         return reviewClient.getReviews(companyId);
     }
 

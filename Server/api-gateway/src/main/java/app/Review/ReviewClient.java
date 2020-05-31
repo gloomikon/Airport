@@ -8,7 +8,7 @@ import java.util.Optional;
 @FeignClient(value = "review-service")
 public interface ReviewClient {
     @GetMapping("/reviews")
-    String getReviews(@RequestParam(value = "companyId", required = false) String companyId);
+    String getReviews(@RequestParam(value = "companyId", required = false) Integer companyId);
 
     @PostMapping("/reviews")
     public Boolean addReview(@RequestBody

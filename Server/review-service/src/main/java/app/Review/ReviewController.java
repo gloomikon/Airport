@@ -16,7 +16,7 @@ public class ReviewController {
     ReviewRepository reviewRepository;
 
     @GetMapping("/reviews")
-    public String getReviews(@RequestParam(value = "companyId", required = false) String companyId) {
+    public String getReviews(@RequestParam(value = "companyId", required = false) Integer companyId) {
         List<Review> resultList = new ArrayList<>();
         Iterable<Review> result;
         if (companyId == null) {
