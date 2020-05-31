@@ -16,7 +16,7 @@ public class TicketController {
     TicketRepository ticketRepository;
 
     @GetMapping("/tickets")
-    public String getByUserId(@RequestParam(value = "userId", required = false) String userId) {
+    public String getByUserId(@RequestParam(value = "userId", required = false) Integer userId) {
         List<Ticket> resultList = new ArrayList<>();
         Iterable<Ticket> result;
         if (userId == null) {

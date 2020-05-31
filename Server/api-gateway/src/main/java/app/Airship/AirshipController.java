@@ -37,7 +37,7 @@ public class AirshipController {
     }
 
     @GetMapping("/planes")
-    public String getPlanesByCompanyId(@RequestParam(value = "companyId", required = true) Integer companyId) {
+    public String getPlanesByCompanyId(@RequestParam(value = "companyId", required = false) Integer companyId) {
         return airshipClient.getPlanesByCompanyId(companyId);
     }
 

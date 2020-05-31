@@ -9,7 +9,7 @@ public class TicketController {
     TicketClient ticketClient;
 
     @GetMapping("/tickets")
-    String getByUserId(@RequestParam(value = "userId", required = false) String userId) {
+    String getByUserId(@RequestParam(value = "userId", required = false) Integer userId) {
         return ticketClient.getByUserId(userId);
     }
 

@@ -24,7 +24,7 @@ public interface AirshipClient {
     public String getPlacesByPlaneId(@RequestParam(value = "planeId", required = true) Integer planeId);
 
     @GetMapping("/planes")
-    public String getPlanesByCompanyId(@RequestParam(value = "companyId", required = true) Integer companyId);
+    public String getPlanesByCompanyId(@RequestParam(value = "companyId", required = false) Integer companyId);
 
     @PostMapping("/planes")
     public Boolean addPlane(@RequestBody @RequestParam(value = "name", required = true) String name,

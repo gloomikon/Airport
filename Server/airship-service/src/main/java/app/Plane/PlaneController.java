@@ -23,9 +23,14 @@ public class PlaneController {
     PlaceRepository placeRepository;
 
     @GetMapping("/planes")
-    public String getPlanesByCompanyId(@RequestParam(value = "companyId", required = true) Integer companyId) {
+    public String getPlanesByCompanyId(@RequestParam(value = "companyId", required = false) Integer companyId) {
         List<Plane> resultList = new ArrayList<>();
-        Iterable<Plane> result = planeRepository.findByCompanyId(companyId);
+        Iterable<Plane> result;
+        if (companyId == null) {
+            result = planeRepository.findAll();
+        } else {
+            result = planeRepository.findByCompanyId(companyId);
+        }
         result.forEach(resultList::add);
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String prettyJson = gson.toJson(resultList);
