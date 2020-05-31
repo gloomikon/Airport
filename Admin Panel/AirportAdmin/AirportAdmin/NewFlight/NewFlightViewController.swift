@@ -150,7 +150,7 @@ class NewFlightViewController: UIViewController {
         let formatter = DateFormatter()
 
         formatter.dateStyle = .medium
-        formatter.timeStyle = .medium
+        formatter.timeStyle = .short
 
         dateFrom = sender.date
 
@@ -161,7 +161,7 @@ class NewFlightViewController: UIViewController {
         let formatter = DateFormatter()
 
         formatter.dateStyle = .medium
-        formatter.timeStyle = .medium
+        formatter.timeStyle = .short
 
         dateTo = sender.date
 
