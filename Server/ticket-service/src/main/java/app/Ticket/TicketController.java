@@ -16,9 +16,14 @@ public class TicketController {
     TicketRepository ticketRepository;
 
     @GetMapping("/tickets")
-    public String getByUserId(@RequestParam(value = "userId", required = true) String userId) {
+    public String getByUserId(@RequestParam(value = "userId", required = false) String userId) {
         List<Ticket> resultList = new ArrayList<>();
-        Iterable<Ticket> result = ticketRepository.findByUserId(userId);
+        Iterable<Ticket> result;
+        if (userId == null) {
+            result = ticketRepository.findAll();
+        } else {
+            result = ticketRepository.findByUserId(userId);
+        }
         result.forEach(resultList::add);
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String prettyJson = gson.toJson(resultList);
