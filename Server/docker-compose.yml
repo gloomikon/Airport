@@ -47,6 +47,16 @@ services:
      - eureka-service
      - mysql
 
+ review-service:
+   build:
+     context: review-service
+     dockerfile: Dockerfile
+   ports:
+     - '8085:8085'
+   depends_on:
+     - eureka-service
+     - mysql
+
  mysql:
    image: mysql:5.7
    restart: always
