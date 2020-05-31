@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 @FeignClient(value = "ticket-service")
 public interface TicketClient {
     @GetMapping("/tickets")
-    String getByUserId(@RequestParam(value = "userId", required = true) String userId);
+    String getByUserId(@RequestParam(value = "userId", required = false) String userId);
 
     @PostMapping("/tickets")
     Boolean addTicket(@RequestBody @RequestParam(value = "userId", required = true) Integer userId,
