@@ -18,4 +18,12 @@ public interface UserClient {
                           @RequestParam(value = "name", required = true) String name,
                           @RequestParam(value = "surname", required = true) String surname,
                           @RequestParam(value = "passport", required = true) String passport);
+
+    @PutMapping("/auth")
+    public String editUser(@RequestBody @RequestParam(value = "id", required = true) Integer id,
+                           @RequestParam(value = "login", required = true) String login,
+                           @RequestParam(value = "password", required = true) String password,
+                           @RequestParam(value = "name", required = true) String name,
+                           @RequestParam(value = "surname", required = true) String surname,
+                           @RequestParam(value = "passport", required = true) String passport);
 }
