@@ -147,7 +147,7 @@ class NewReviewViewController: UIViewController {
             "text": text,
             "rating": Int(stepper.value),
             "userId": user.id,
-            "companyId": company.id
+            "companyId": review.companyId
         ]
 
         ApiCaller.makeRequest(endPoint: "reviews", method: .put, params: params, type: Bool.self)
