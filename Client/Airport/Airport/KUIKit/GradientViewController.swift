@@ -1,6 +1,6 @@
 import UIKit
 
-class GradientViewController: UIViewController {
+class GradientViewController: BaseViewController {
     private let layer = CAGradientLayer()
     private let colors = [[UIColor.sakuraTree.cgColor, UIColor.clearSky.cgColor],
                           [UIColor.coldAir.cgColor, UIColor.morningMilk.cgColor]

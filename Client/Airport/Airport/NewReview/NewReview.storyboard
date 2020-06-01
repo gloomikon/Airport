@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sZ4-6M-1Pi">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Review Details-->
+        <scene sceneID="UWh-MZ-zYZ">
+            <objects>
+                <viewController storyboardIdentifier="NewReviewViewController" title="Review Details" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sZ4-6M-1Pi" customClass="NewReviewViewController" customModule="Airport" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6OO-vG-TeZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2dF-TI-jiv">
+                                <rect key="frame" x="50" y="98" width="314" height="156"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BDt-47-fNT">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="zQM-X6-WxN">
+                                        <rect key="frame" x="0.0" y="44" width="314" height="32"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0u-Bo-xHe">
+                                                <rect key="frame" x="0.0" y="0.0" width="214" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="pLX-SP-p33">
+                                                <rect key="frame" x="220" y="0.0" width="94" height="32"/>
+                                                <connections>
+                                                    <action selector="stepperChangedValue:" destination="sZ4-6M-1Pi" eventType="valueChanged" id="d9h-OT-Wpp"/>
+                                                </connections>
+                                            </stepper>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhd-hI-XD4">
+                                        <rect key="frame" x="0.0" y="86" width="314" height="30"/>
+                                        <state key="normal" title="Confirm"/>
+                                        <connections>
+                                            <action selector="confirmButtonTapped:" destination="sZ4-6M-1Pi" eventType="touchUpInside" id="vQ8-Y3-bQh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ar2-av-got">
+                                        <rect key="frame" x="0.0" y="126" width="314" height="30"/>
+                                        <state key="normal" title="Delete"/>
+                                        <connections>
+                                            <action selector="deleteButtonTapped:" destination="sZ4-6M-1Pi" eventType="touchUpInside" id="eu3-3P-BfZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2dF-TI-jiv" firstAttribute="top" secondItem="8Mp-ZH-yYw" secondAttribute="top" constant="10" id="YJY-HE-4cS"/>
+                            <constraint firstItem="8Mp-ZH-yYw" firstAttribute="trailing" secondItem="2dF-TI-jiv" secondAttribute="trailing" constant="50" id="uTC-Kd-JVT"/>
+                            <constraint firstItem="2dF-TI-jiv" firstAttribute="leading" secondItem="8Mp-ZH-yYw" secondAttribute="leading" constant="50" id="zDS-9X-1TG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8Mp-ZH-yYw"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="confirmButton" destination="hhd-hI-XD4" id="MBi-3I-QoD"/>
+                        <outlet property="deleteButton" destination="Ar2-av-got" id="bXy-YA-sP4"/>
+                        <outlet property="ratingLabel" destination="J0u-Bo-xHe" id="vb8-2K-AV4"/>
+                        <outlet property="reviewTextTextLabel" destination="BDt-47-fNT" id="whT-7E-zXa"/>
+                        <outlet property="stepper" destination="pLX-SP-p33" id="JLB-3j-8Nh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rOg-BW-k5Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="170" y="-205"/>
+        </scene>
+    </scenes>
+</document>

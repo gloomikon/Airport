@@ -48,7 +48,7 @@ class PlanesListViewController: BaseViewController {
             "companyId": "\(company.id)"
         ]
 
-        ApiCaller.makeResponse(endPoint: "planes", method: .get, params: params, type: [Plane].self)
+        ApiCaller.makeRequest(endPoint: "planes", method: .get, params: params, type: [Plane].self)
             .onSuccess { planes in
                 self.planes = planes
                 self.tableView.reloadData()

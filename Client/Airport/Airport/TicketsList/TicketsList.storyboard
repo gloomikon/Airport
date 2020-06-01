@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E2K-9w-0JF">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My Tickets-->
+        <scene sceneID="jya-1F-tRe">
+            <objects>
+                <viewController storyboardIdentifier="TicketsListViewController" title="My Tickets" useStoryboardIdentifierAsRestorationIdentifier="YES" id="E2K-9w-0JF" customClass="TicketsListViewController" customModule="Airport" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GXD-Fl-kWE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t5X-U8-SqZ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="t5X-U8-SqZ" firstAttribute="leading" secondItem="Drz-lL-0jJ" secondAttribute="leading" id="DDb-qV-nho"/>
+                            <constraint firstItem="Drz-lL-0jJ" firstAttribute="bottom" secondItem="t5X-U8-SqZ" secondAttribute="bottom" id="GL1-lV-TfS"/>
+                            <constraint firstItem="Drz-lL-0jJ" firstAttribute="trailing" secondItem="t5X-U8-SqZ" secondAttribute="trailing" id="wdu-OS-1t9"/>
+                            <constraint firstItem="t5X-U8-SqZ" firstAttribute="top" secondItem="Drz-lL-0jJ" secondAttribute="top" id="xft-uI-XwR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Drz-lL-0jJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tickets list" id="N9a-D6-0V1"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="t5X-U8-SqZ" id="t19-5e-gZz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bhf-dQ-uqO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="396" y="-357"/>
+        </scene>
+        <!--CompanyViewController-->
+        <scene sceneID="pI0-nU-Yn3">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Company" referencedIdentifier="CompanyViewController" id="ImG-vk-n6h" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rlr-5R-uxL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="960" y="-404"/>
+        </scene>
+    </scenes>
+</document>

@@ -4,6 +4,7 @@ import Alamofire
 class SignUpViewController: GradientViewController {
 
     // MARK: - IBOutlets
+
     @IBOutlet var firstNameTextField: UITextField!
     @IBOutlet var lastNameTextField: UITextField!
     @IBOutlet var loginTextField: UITextField!
@@ -17,13 +18,21 @@ class SignUpViewController: GradientViewController {
         }
     }
 
+    // Properties
+
+    private let segueHandler = SegueHandler()
+
     // MARK: - Life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    // MARK: - IBActions
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+
+    // MARK: - Private functions
 
     @IBAction func submitButtonTapped(_ sender: Any) {
         guard let firstName = firstNameTextField.text, !firstName.isEmpty,
@@ -31,7 +40,7 @@ class SignUpViewController: GradientViewController {
             let login = loginTextField.text, !login.isEmpty,
             let passportNumber = passportNumberTextField.text, !passportNumber.isEmpty,
             let password = passwordTextField.text, !password.isEmpty else {
-                showAlert(message: "You must fill all the field!")
+                showAlert(type: .error, message: "You must fill all the field!")
                 return
         }
 
@@ -39,27 +48,23 @@ class SignUpViewController: GradientViewController {
             "name": firstName,
             "surname": lastName,
             "login": login,
-            "passportNumber": passportNumber,
+            "passport": passportNumber,
             "password": password.md5()
         ]
 
-        Alamofire.request("http://localhost:8080/auth", method: .post, parameters: params, encoding: URLEncoding.default)
-            .response { response in
-                do {
-                    let users = try JSONDecoder().decode([User].self, from: response.data!)
-                    guard let user = users.first else {
-                        DispatchQueue.main.async {
-                            self.showAlert(message: "Incorrect username and/or password")
-                        }
-                        return
-                    }
-                    DispatchQueue.main.async {
+        ApiCaller.makeRequest(endPoint: "auth", method: .post, params: params, type: [User].self)
+            .onSuccess { users in
+                guard let parsedUser = users.first else {
+                    self.showAlert(type: .error, message: "Incorrect username and / or password")
+                    return
+                }
 
-                    }
-                }
-                catch {
-                    self.showAlert(message: "Incorrect username and/or password")
-                }
+                user = parsedUser
+                self.tabBarController?.tabBar.isHidden = true
+                self.segueHandler.perform(from: self, identifier: "navigateToMenu")
+        }
+        .onFailure { error in
+            self.showAlert(type: .error, message: error.localizedDescription)
         }
     }
 }

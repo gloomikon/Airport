@@ -7,6 +7,6 @@ target 'Airport' do
 
   # Pods for Airport
   pod 'Alamofire'
-  pod 'SwiftyJSON'
+  pod 'BrightFutures'
 
 end

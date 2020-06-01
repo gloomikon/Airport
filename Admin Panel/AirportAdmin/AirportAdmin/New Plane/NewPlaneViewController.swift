@@ -128,7 +128,7 @@ class NewPlaneViewController: BaseViewController {
             "companyId": "\(company.id)"
         ]
 
-        ApiCaller.makeResponse(endPoint: "planes", method: .post, params: params, type: Bool.self)
+        ApiCaller.makeRequest(endPoint: "planes", method: .post, params: params, type: Bool.self)
             .onSuccess { result in
                 if result {
                     self.showAlert(type: .success, message: "New plane has been added") { (_) in
@@ -149,7 +149,7 @@ class NewPlaneViewController: BaseViewController {
             "id": "\(plane!.id)"
         ]
 
-        ApiCaller.makeResponse(endPoint: "planes", method: .delete, params: params, type: Bool.self)
+        ApiCaller.makeRequest(endPoint: "planes", method: .delete, params: params, type: Bool.self)
             .onSuccess { result in
                 if result {
                     self.showAlert(type: .success, message: "Plane has been deleted") { (_) in

@@ -18,7 +18,7 @@ extension AnyError: LocalizedError {
 }
 
 class ApiCaller {
-    static func makeResponse<T>(endPoint: String, method: HTTPMethod, params: Parameters? = nil, type: T.Type) -> Future<T, AnyError> where T: Decodable {
+    static func makeRequest<T>(endPoint: String, method: HTTPMethod, params: Parameters? = nil, type: T.Type) -> Future<T, AnyError> where T: Decodable {
         let url = "http://localhost:8080/\(endPoint)"
         let promise = Promise<T, AnyError>()
         Alamofire.request(url, method: method, parameters: params, encoding: URLEncoding.default)

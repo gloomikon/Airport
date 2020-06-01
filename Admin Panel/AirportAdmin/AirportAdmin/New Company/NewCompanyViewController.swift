@@ -66,7 +66,7 @@ class NewCompanyViewController: BaseViewController {
             "description": description
         ]
 
-        ApiCaller.makeResponse(endPoint: "companies", method: .post, params: params, type: Bool.self)
+        ApiCaller.makeRequest(endPoint: "companies", method: .post, params: params, type: Bool.self)
             .onSuccess { result in
                 if result {
                     self.showAlert(type: .success, message: "Company has been created") { _ in
@@ -89,7 +89,7 @@ class NewCompanyViewController: BaseViewController {
             "description": description
         ]
 
-        ApiCaller.makeResponse(endPoint: "companies", method: .put, params: params, type: Bool.self)
+        ApiCaller.makeRequest(endPoint: "companies", method: .put, params: params, type: Bool.self)
             .onSuccess { result in
                 self.showAlert(type: .success, message: "Company has been updated") { _ in
                     self.navigationController?.popViewController(animated: true)
@@ -105,7 +105,7 @@ class NewCompanyViewController: BaseViewController {
             "id": "\(id)"
         ]
 
-        ApiCaller.makeResponse(endPoint: "companies", method: .delete, params: params, type: Bool.self)
+        ApiCaller.makeRequest(endPoint: "companies", method: .delete, params: params, type: Bool.self)
             .onSuccess { result in
                 self.showAlert(type: .success, message: "Company has been deleted") { _ in
                     self.navigationController?.popViewController(animated: true)

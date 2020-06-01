@@ -3,6 +3,8 @@ import Alamofire
 
 class SignInViewController: GradientViewController {
 
+    // MARK: - IBOutlets
+
     @IBOutlet var loginTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var submitButton: UIButton! {
@@ -12,13 +14,30 @@ class SignInViewController: GradientViewController {
             submitButton.layer.cornerRadius = 10
         }
     }
+
+    // MARK: - Properties
+
+    private let segueHandler = SegueHandler()
+
+    // MARK: - Life cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        tabBarController?.tabBar.isHidden = false
+    }
+
+    // MARK: - Private actions
+
     @IBAction func sumbitButtonTapped(_ sender: Any) {
         guard let login = loginTextField.text, !login.isEmpty,
             let password = passwordTextField.text, !password.isEmpty else {
-                showAlert(message: "You must fill all the field!")
+                showAlert(type: .error, message: "Fields can not be empty")
                 return
         }
 
@@ -27,23 +46,21 @@ class SignInViewController: GradientViewController {
             "password": password.md5()
         ]
 
-        Alamofire.request("http://localhost:8080/auth", method: .post, parameters: params, encoding: URLEncoding.default)
-            .response { response in
-                do {
-                    let users = try JSONDecoder().decode([User].self, from: response.data!)
-                    guard let user = users.first else {
-                        DispatchQueue.main.async {
-                            self.showAlert(message: "Incorrect username and/or password")
-                        }
-                        return
-                    }
-                    DispatchQueue.main.async {
+        ApiCaller.makeRequest(endPoint: "auth", method: .get, params: params, type: [User].self)
+            .onSuccess { users in
+                guard let parsedUser = users.first else {
+                    self.showAlert(type: .error, message: "Incorrect username and / or password")
+                    return
+                }
 
-                    }
-                }
-                catch {
-                    self.showAlert(message: "Incorrect username and/or password")
-                }
+                user = parsedUser
+                self.tabBarController?.tabBar.isHidden = true
+                self.segueHandler.perform(from: self, identifier: "navigateToMenu")
+        }
+        .onFailure { error in
+            self.showAlert(type: .error, message: error.localizedDescription)
         }
     }
+
+    @IBAction func unwindToStart(segue:UIStoryboardSegue) { }
 }

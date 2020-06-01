@@ -39,7 +39,7 @@ class CompaniesViewController: BaseViewController {
     private func fetchCompanies() {
         let endPoint = "companies"
         let method = HTTPMethod.get
-        ApiCaller.makeResponse(endPoint: endPoint, method: method, type: [Company].self)
+        ApiCaller.makeRequest(endPoint: endPoint, method: method, type: [Company].self)
             .onSuccess { companies in
                 self.companies = companies
                 self.tableView.reloadData()

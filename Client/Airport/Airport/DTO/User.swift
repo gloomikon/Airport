@@ -1,17 +1,12 @@
-struct User: Decodable {
+struct User {
     let id: Int
     let name: String
     let surname: String
     let login: String
-    let passportNumber: String
+    let passport: String
     let password: String
-
-    enum CodingKeys: String, CodingKey {
-        case id
-        case name
-        case surname
-        case login
-        case passportNumber
-        case password
-    }
 }
+
+extension User: Decodable { }
+
+var user: User!

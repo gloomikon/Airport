@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hPB-MM-LX6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hPB-MM-LX6">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -76,11 +76,22 @@
                         <outlet property="passportNumberTextField" destination="X8E-Wu-XCd" id="XAO-al-JUt"/>
                         <outlet property="passwordTextField" destination="tsN-wJ-6GO" id="msG-nx-qWp"/>
                         <outlet property="submitButton" destination="otv-OP-b4G" id="JGR-D7-dMH"/>
+                        <segue destination="r6n-6B-PFu" kind="show" identifier="navigateToMenu" id="hNC-Ed-21T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nlM-lB-u7p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="510" y="-202"/>
+        </scene>
+        <!--MenuViewController-->
+        <scene sceneID="a20-fG-XtY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Menu" referencedIdentifier="MenuViewController" id="r6n-6B-PFu" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="A65-ky-BAL"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fQv-k4-d0R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1015" y="-319"/>
         </scene>
     </scenes>
 </document>

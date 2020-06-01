@@ -1,20 +1,20 @@
 PODS:
   - Alamofire (4.9.1)
-  - SwiftyJSON (5.0.0)
+  - BrightFutures (8.0.0)
 
 DEPENDENCIES:
   - Alamofire
-  - SwiftyJSON
+  - BrightFutures
 
 SPEC REPOS:
   trunk:
     - Alamofire
-    - SwiftyJSON
+    - BrightFutures
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  BrightFutures: f8427b46feabaf73c5e71ace7d86d65dfbb47696
 
-PODFILE CHECKSUM: 3651f9cab3373e9e42fe22cb8f17316b32677bcd
+PODFILE CHECKSUM: 871fd58495e57b40ccd17dc94316aff19d912443
 
 COCOAPODS: 1.8.4

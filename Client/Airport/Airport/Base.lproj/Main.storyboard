@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y53-LO-EBo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y53-LO-EBo">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +18,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="sSw-3c-17G" kind="relationship" relationship="viewControllers" id="fbo-10-8gy"/>
-                        <segue destination="F8f-sB-IrC" kind="relationship" relationship="viewControllers" id="18h-qf-WXf"/>
+                        <segue destination="mbW-cL-EGh" kind="relationship" relationship="viewControllers" id="uPd-el-SEs"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cM1-Kf-D3b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -28,7 +28,6 @@
         <!--Sign In-->
         <scene sceneID="71E-25-GtD">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qXg-l3-nMI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="sSw-3c-17G" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Sign In" image="person.fill" catalog="system" id="quG-2B-ZVA"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bNi-yg-Vrj">
@@ -39,6 +38,7 @@
                         <segue destination="wpC-lh-U3F" kind="relationship" relationship="rootViewController" id="wCT-bh-Z3s"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qXg-l3-nMI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1409" y="-82"/>
         </scene>
@@ -52,23 +52,6 @@
             </objects>
             <point key="canvasLocation" x="2189" y="-176"/>
         </scene>
-        <!--Sign Up-->
-        <scene sceneID="IsR-VK-7xE">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yg4-Zb-ns6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <navigationController id="F8f-sB-IrC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Sign Up" image="person.badge.plus.fill" catalog="system" id="mlv-jC-yRU"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="s4b-1t-RR7">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="zea-hD-dYe" kind="relationship" relationship="rootViewController" id="l8j-Tv-7AY"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="1409" y="586"/>
-        </scene>
         <!--SignUpViewController-->
         <scene sceneID="TYw-Hb-jBO">
             <objects>
@@ -79,9 +62,26 @@
             </objects>
             <point key="canvasLocation" x="2351" y="431"/>
         </scene>
+        <!--Sign Up-->
+        <scene sceneID="4oM-ZZ-38B">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="deh-LT-nQL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController id="mbW-cL-EGh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Sign Up" image="person.badge.plus.fill" catalog="system" id="OHV-ig-Svz"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ngD-TZ-TFx">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="zea-hD-dYe" kind="relationship" relationship="rootViewController" id="vbw-Bo-cbg"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1409" y="621"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="person.badge.plus.fill" catalog="system" width="64" height="58"/>
-        <image name="person.fill" catalog="system" width="64" height="60"/>
+        <image name="person.badge.plus.fill" catalog="system" width="128" height="116"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
     </resources>
 </document>

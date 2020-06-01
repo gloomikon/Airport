@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rip-QW-5aX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Company Info-->
+        <scene sceneID="yQ9-NJ-hKV">
+            <objects>
+                <viewController storyboardIdentifier="CompanyViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rip-QW-5aX" customClass="CompanyViewController" customModule="Airport" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z8t-7K-Hfe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="company" translatesAutoresizingMaskIntoConstraints="NO" id="Gfx-rt-Ibn">
+                                <rect key="frame" x="30" y="118" width="354" height="354"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Gfx-rt-Ibn" secondAttribute="height" multiplier="1:1" id="SEO-qn-9Xo"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="grF-0r-GOk">
+                                <rect key="frame" x="30" y="502" width="354" height="81.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yyr-eF-raE">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1O-sy-bOr">
+                                        <rect key="frame" x="0.0" y="30.5" width="354" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjO-2q-1wN">
+                                        <rect key="frame" x="0.0" y="61" width="354" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Gfx-rt-Ibn" firstAttribute="leading" secondItem="ZWh-25-ngA" secondAttribute="leading" constant="30" id="OWg-zm-o7M"/>
+                            <constraint firstItem="Gfx-rt-Ibn" firstAttribute="top" secondItem="ZWh-25-ngA" secondAttribute="top" constant="30" id="aIp-FQ-3GP"/>
+                            <constraint firstItem="grF-0r-GOk" firstAttribute="leading" secondItem="ZWh-25-ngA" secondAttribute="leading" constant="30" id="bHW-K7-GI4"/>
+                            <constraint firstItem="ZWh-25-ngA" firstAttribute="trailing" secondItem="Gfx-rt-Ibn" secondAttribute="trailing" constant="30" id="eRQ-oh-EpF"/>
+                            <constraint firstItem="grF-0r-GOk" firstAttribute="top" secondItem="Gfx-rt-Ibn" secondAttribute="bottom" constant="30" id="i3x-BW-5Lp"/>
+                            <constraint firstItem="ZWh-25-ngA" firstAttribute="trailing" secondItem="grF-0r-GOk" secondAttribute="trailing" constant="30" id="iA9-tJ-j6O"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZWh-25-ngA"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Company Info" id="gwT-8a-2dg">
+                        <barButtonItem key="rightBarButtonItem" title="Reviews" id="JDt-et-mfd">
+                            <connections>
+                                <action selector="showReviewsButtonTapped:" destination="rip-QW-5aX" id="crZ-Op-SUb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="y1O-sy-bOr" id="V7g-HR-d4B"/>
+                        <outlet property="nameLabel" destination="Yyr-eF-raE" id="UZk-sA-n9F"/>
+                        <outlet property="ratingLabel" destination="xjO-2q-1wN" id="6FT-qT-lLE"/>
+                        <segue destination="YYD-wD-G37" kind="show" identifier="showReviews" id="QPz-QA-WGF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rZ3-0h-2Sp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="41" y="119"/>
+        </scene>
+        <!--ReviewsListViewController-->
+        <scene sceneID="uyR-ie-eIq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ReviewsList" referencedIdentifier="ReviewsListViewController" id="YYD-wD-G37" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Fhc-77-QMX"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bax-cB-QIz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="742" y="107"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="company" width="200" height="200"/>
+    </resources>
+</document>

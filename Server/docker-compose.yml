@@ -59,6 +59,12 @@ services:
 
  mysql:
    image: mysql:5.7
+   command:
+     - --skip-name-resolve
+     - --connect_timeout=600
+     - --net_read_timeout=600
+     - --net_write_timeout=600
+     - --max_allowed_packet=256M
    restart: always
    environment:
      MYSQL_DATABASE: 'lab1'

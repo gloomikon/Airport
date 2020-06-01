@@ -34,7 +34,7 @@ class FlightsListViewController: BaseViewController {
     // MARK: - Private functions
 
     private func fetchFlights() {
-        ApiCaller.makeResponse(endPoint: "flights", method: .get, type: [Flight].self)
+        ApiCaller.makeRequest(endPoint: "flights", method: .get, type: [Flight].self)
             .onSuccess { flights in
                 self.flights = flights
                 self.tableView.reloadData()

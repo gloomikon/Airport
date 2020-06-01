@@ -187,7 +187,7 @@ class NewFlightViewController: UIViewController {
             "planeId": "\(plane.id)"
         ]
 
-        ApiCaller.makeResponse(endPoint: "flights", method: .post, params: params, type: Bool.self)
+        ApiCaller.makeRequest(endPoint: "flights", method: .post, params: params, type: Bool.self)
             .onSuccess { result in
                 if result {
                     self.showAlert(type: .success, message: "Flight has been created") { _ in
@@ -208,7 +208,7 @@ class NewFlightViewController: UIViewController {
             "id": "\(flight.id)"
         ]
 
-        ApiCaller.makeResponse(endPoint: "flights", method: .delete, params: params, type: Bool.self)
+        ApiCaller.makeRequest(endPoint: "flights", method: .delete, params: params, type: Bool.self)
             .onSuccess { result in
                 if result {
                     self.showAlert(type: .success, message: "Flight has been deleted") { _ in
